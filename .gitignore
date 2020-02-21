@@ -1,2 +1,8 @@
 # IDE specific files
 utils_cpp.code-workspace
+
+# Outputs
+*.out
+
+# Linking, compilation etc.
+**.o
