@@ -1,4 +1,5 @@
 #include <iostream>
+#include "MetaClass.h"
 
 using namespace std;
 
@@ -6,7 +7,8 @@ using namespace std;
 int main(int argc, char *argv[]){
     // If there are arguments, use command line
     if(argc > 1){
-        cout << "coucou";
+        MetaClass c1(argv[1]);
+        cout << c1.printClass();
     }
     // Else run the GUI creator
 

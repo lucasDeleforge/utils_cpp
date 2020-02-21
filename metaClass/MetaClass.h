@@ -9,7 +9,7 @@ Meta class representing a C++ class
 class MetaClass {
     public:
     MetaClass(std::string className);
-    void printClass();
+    std::string printClass();
     
     protected:
     // Multi def protection
