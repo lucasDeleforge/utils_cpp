@@ -21,13 +21,16 @@ m_endClass("};\n\n")
     this->m_endDef = "#endif\n";
 }
 
-string MetaClass::printClass(){
-    string str;
-    str += m_beginDef;
-    str += m_classKeyWord + " ";
-    str += m_className + " ";
-    str += m_beginClass;
-    str += m_endClass;
-    str += m_endDef;
-    return str;
+void MetaClass::print(ostream &flux) const{
+    flux << m_beginDef;
+    flux << m_classKeyWord + " ";
+    flux << m_className + " ";
+    flux << m_beginClass;
+    flux << m_endClass;
+    flux << m_endDef;
+}
+
+ostream &operator<<(ostream &flux, MetaClass const &metaClass){
+    metaClass.print(flux);
+    return flux;
 }

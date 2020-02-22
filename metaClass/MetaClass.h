@@ -5,11 +5,12 @@ Meta class representing a C++ class
 #define DEF_METACLASS
 
 #include <string>
+#include <ostream>
 
 class MetaClass {
     public:
     MetaClass(std::string className);
-    std::string printClass();
+    void print(std::ostream &flux) const;
     
     protected:
     // Multi def protection
@@ -23,5 +24,7 @@ class MetaClass {
     std::string m_endClass;
 
 };
+
+std::ostream &operator<<(std::ostream &flux, MetaClass const &metaClass);
 
 #endif
